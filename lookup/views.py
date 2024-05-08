@@ -10,7 +10,7 @@ def home(request):  #define a view, a home view that passes a request
         api = json.loads(api_request.content)
 
     except Exception as e:
-        api = "Error EN LA PUTA BASE DE DATOS"
+        api = "Chiiispas, something went wrong"
     return render(request,'home.html',{'api':api})  # passes the request into the function
 ## goes to home html and passes in a dictionary later
 
