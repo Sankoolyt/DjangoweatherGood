@@ -11,27 +11,13 @@
     {% if api == 'Chiiispas, something went wrong'%}
         Se cuatrapeó el system
     {% else%}
-    <div class="jumbotron good">
+    <div class="jumbotron {{ category_color }}">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">{{ api.0.Category.Name }} </h1>
           <hr class="col-md-8 fs-4">
             <p> Air quality in {{ api.0.ReportingArea }} is : {{ api.0.AQI }}</p>
             <p> esto significa que:
-            {%if api.0.Category.Name == "Good"%}
-            Esta con madre el clima y puedes hacer cosas chingonas</p>
-            {% elif api.0.Category.Name == "Moderate" %}
-              <p> Cámara mi tibio, pilas porque si no te me desmayas</p>
-            {% elif api.0.Category.Name == "USG" %}
-               <p>Anda de viva la contaminación, pero no te dejes mi tibio</p>
-            {% elif api.0.Category.Name == "Unhealthy" %}
-               <p>Se está poniendo al tiro el clima, tú sal con tapaocicos y ya andas gucci</p>
-            {% elif api.0.Category.Name == "Very Unhealthy" %}
-               <p>Estos niveles de contaminación  son generados por los neoliberales </p>
-            {% elif api.0.Category.Name == "Hazardous" %}
-               <p>no es por alarmarte pero mejor vete del país que anda insano en clima</p>
-
-
-            {% endif  %}
+             <p> {{ category_description}}</p>
 
           <button class="btn btn-primary btn-lg" type="button">Learn more</button>
         </div>
